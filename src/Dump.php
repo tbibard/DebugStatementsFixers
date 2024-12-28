@@ -10,6 +10,7 @@ use PhpCsFixer\Tokenizer\Tokens;
 
 /**
  * @author Andrew Kovalyov <andrew.kovalyoff@gmail.com>
+ * @author Thomas Bibard <thomas.bibard@neblion.net>
  */
 final class Dump extends AbstractFunctionReferenceFixer
 {

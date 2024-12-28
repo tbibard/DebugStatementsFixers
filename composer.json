@@ -5,6 +5,10 @@
     "license": "MIT",
     "authors": [
         {
+            "name": "Andrew Kovalyov",
+            "email": "andrew.kovalyoff@gmail.com"
+        },
+        {
             "name": "Thomas Bibard",
             "email": "thomas.bibard@neblion.net"
         }

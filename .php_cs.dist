@@ -23,6 +23,6 @@ return PhpCsFixer\Config::create()
         'strict_param'                                  => true,
         'RemoveDebugStatements/dump'                    => true,
     ])
-    ->registerCustomFixers([new Drew\DebugStatementsFixers\Dump()])
+    ->registerCustomFixers([new tbibard\DebugStatementsFixers\Dump()])
     ->setRiskyAllowed(true)
     ->setFinder($finder);
