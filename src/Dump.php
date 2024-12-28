@@ -5,6 +5,7 @@ namespace Drew\DebugStatementsFixers;
 use PhpCsFixer\AbstractFunctionReferenceFixer;
 use PhpCsFixer\FixerDefinition\CodeSample;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
+use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\Tokens;
 
 /**
@@ -20,7 +21,8 @@ final class Dump extends AbstractFunctionReferenceFixer
     /**
      * {@inheritdoc}
      */
-    public function isCandidate(Tokens $tokens)
+    public function isCandidate(Tokens $tokens): bool
+        
     {
         return $tokens->isTokenKindFound(T_STRING);
     }
@@ -28,7 +30,7 @@ final class Dump extends AbstractFunctionReferenceFixer
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getName(): string
     {
         return 'RemoveDebugStatements/dump';
     }
@@ -36,7 +38,7 @@ final class Dump extends AbstractFunctionReferenceFixer
     /**
      * {@inheritdoc}
      */
-    public function getDefinition()
+    public function getDefinition(): FixerDefinitionInterface
     {
         return new FixerDefinition(
             'Removes dump/var_dump statements, which shouldn\'t be in production ever.',
@@ -47,7 +49,7 @@ final class Dump extends AbstractFunctionReferenceFixer
     /**
      * {@inheritdoc}
      */
-    protected function applyFix(\SplFileInfo $file, Tokens $tokens)
+    protected function applyFix(\SplFileInfo $file, Tokens $tokens): void
     {
         foreach ($this->functions as $function) {
             $currIndex = 0;
